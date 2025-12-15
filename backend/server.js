@@ -1,14 +1,24 @@
-const express = require('express')
-const app = express()
-const port = 5000
-const db = require("./Config/db")()
-const cors = require('cors')
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const fs = require("fs");
+const path = require("path");
+
+require("./Config/db")();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
 app.use('/uploads', express.static('uploads'));
 
-app.use(cors())
-const route = require("./routes/user.route")
-app.use("/api/user", route)
+const route = require("./routes/user.route");
+app.use("/api/user", route);
 
-app.listen(port, () => console.log(`http://localhost:${port}`))
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
