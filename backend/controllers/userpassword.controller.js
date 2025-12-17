@@ -1,7 +1,7 @@
 const { plainToHash } = require("../utils/password")
 const UserPassword = require("../models/userPassword.model")
 
-exports.store = async (req, res) => {
+exports.signup = async (req, res) => {
 
     try {
         const { username, email, mobile, password } = req.body
@@ -19,4 +19,8 @@ exports.store = async (req, res) => {
             message: err.message
         })
     }
+}
+
+exports.login = async ( req, res) => {
+    console.log(req.body)
 }

@@ -1,24 +1,17 @@
-import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Api from "../Api";
 
 export default function SimpleForm() {
   const { register, handleSubmit, reset } = useForm();
-  const [users, setUsers] = useState([]);
 
   async function signup(data) {
-    await Api.post("/api/userpass", data);
-    console.log(data);
+    try {
+      await Api.post("/api/userpass", data);
+      reset();
+    } catch (err) {
+      console.log("Error : ", err);
+    }
   }
-
-  async function getUsers() {
-    const res = await Api.get("/api/userpass");
-    console.log(res.data);
-  }
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   return (
     <div className="container mt-5">
