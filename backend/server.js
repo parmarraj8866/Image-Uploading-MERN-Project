@@ -4,9 +4,11 @@ const cors = require('cors');
 const fs = require("fs");
 const path = require("path");
 const dotenv = require("dotenv").config()
+const cookieParser = require("cookie-parser")
 
 require("./Config/db")()
 
+app.use(cookieParser())
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());

@@ -1,15 +1,21 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Api from "../Api";
 
 export default function SimpleForm() {
   const { register, handleSubmit, reset } = useForm();
+  const redirect = useNavigate();
 
   async function signup(data) {
     try {
-      await Api.post("/api/userpass", data);
-      reset();
+      const res = await Api.post("/api/userpass/signup", data);
+      if (res.data.success) {
+        alert("SignUp");
+        redirect("/");
+        reset();
+      }
     } catch (err) {
-      console.log("Error : ", err);
+      console.log("Error : ", err.message);
     }
   }
 

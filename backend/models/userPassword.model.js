@@ -17,4 +17,4 @@ const userPassword = new mongoose.Schema({
     timestamps: true
 })
 
-exports.module = mongoose.model("userPassword", userPassword)
+module.exports = mongoose.model("userPassword", userPassword)
