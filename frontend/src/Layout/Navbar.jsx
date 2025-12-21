@@ -2,10 +2,10 @@
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container">
         <a className="navbar-brand" href="/">
-          Image App
+          Movie Project 
         </a>
 
         <button
@@ -20,18 +20,13 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link fs-5" href="/">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/form">
-                Form
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/signup">
-                Signup
+              <a className="nav-link fs-5" href="/form">
+                Add MovieForm
               </a>
             </li>
           </ul>
