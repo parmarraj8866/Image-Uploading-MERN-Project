@@ -28,14 +28,14 @@ Users can:
 ## Screenshots
 
 ### Home Screen
-![Home Screen](../frontend/public/Home.png)
+![Home Screen](Home.png)
 
 
 ### Add Movie
-![Add Movie](../frontend/public/Add%20Movie%20Form.png)
+![Add Movie](Add%20Movie%20Form.png)
 
 ### Update Movie
-![Update Movie](../frontend/public/Update%20Form.png)
+![Update Movie](Update%20Form.png)
 
 > Make sure to place your images in the `images/` folder of your project.
 
@@ -45,3 +45,4 @@ Users can:
 ```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
+
