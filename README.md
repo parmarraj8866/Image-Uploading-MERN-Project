@@ -1,4 +1,4 @@
-# Movie Management App
+# MERN Stack Movie Project
 
 > A simple movie management application to list, add, and update movies.
 
@@ -36,13 +36,3 @@ Users can:
 
 ### Update Movie
 ![Update Movie](Update%20Form.png)
-
-> Make sure to place your images in the `images/` folder of your project.
-
-## Installation
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-
